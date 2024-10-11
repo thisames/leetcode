@@ -1,1 +1,1 @@
-print("jogging"[:3])
+print("ab"[:1])

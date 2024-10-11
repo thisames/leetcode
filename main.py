@@ -12,7 +12,10 @@ def longestCommonPrefix(strs: List[str]) -> str:
             if char != strs[i][index]:
                 return strs[0][:index]
         index += 1
-    return strs[0]
+    return strs[0][:index]
+
+
+print(longestCommonPrefix(["flower", "flow", "flight"]))
 
 
 # ["running", "jogging", "walking"]
@@ -47,6 +50,3 @@ def longestCommonSuffix(strs: List[str]) -> str:
         index += 1
 
     return strs[0][-index:]
-
-
-print(longestCommonSuffix(["running", "jogging", "walking"]))
