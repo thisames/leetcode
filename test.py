@@ -1,0 +1,1 @@
+print("jogging"[:3])
