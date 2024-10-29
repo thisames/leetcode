@@ -39,18 +39,8 @@ def starts_with(trie, prefix):
 trie = create_trie()
 
 # Insere palavras
-insert(trie, "cat")
-insert(trie, "cap")
-insert(trie, "bat")
+insert(trie, "hello")
+insert(trie, "hell")
+insert(trie, "heaven")
 
-# Busca palavras
-print(search(trie, "cat"))  # True
-print(search(trie, "cap"))  # True
-print(search(trie, "bat"))  # True
-print(search(trie, "can"))  # False
-
-# Busca por prefixos
-print(starts_with(trie, "ca"))  # True
-print(starts_with(trie, "ba"))  # True
-print(starts_with(trie, "bat"))  # True
-print(starts_with(trie, "bad"))  # False
+print(trie)
