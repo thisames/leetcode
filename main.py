@@ -2,11 +2,11 @@ from typing import List
 
 
 def longestCommonPrefix(strs: List[str]) -> str:
-    a = min([len(i) for i in strs])
+    min_ = min(len(strs[0]), len(strs[-1]))
 
     index = 0
 
-    while index < a:
+    while index < min_:
         char = strs[0][index]
         for i in range(1, len(strs)):
             if char != strs[i][index]:
@@ -15,7 +15,26 @@ def longestCommonPrefix(strs: List[str]) -> str:
     return strs[0][:index]
 
 
-print(longestCommonPrefix(["flower", "flow", "flight"]))
+def getLast(strs: List[str]) -> str:
+    return strs[- 1]
+    
+
+def longestCommonPrefix2(strs: List[str]) -> str:
+    strs = sorted(strs)
+    result = ""
+    first = strs[0]
+    last = strs[-1]
+
+    a = min(len(first), len(last))
+    for i in range(min(len(first), len(last))):
+        if first[i] != last[i]:
+            return result
+        result += first[i]
+    return result
+
+
+print(longestCommonPrefix2(["flower", "flow", "flight"]))
+print(getLast(["flower", "flow", "flight"]))
 
 
 # ["running", "jogging", "walking"]
