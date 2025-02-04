@@ -1,4 +1,4 @@
-x = input().split(" ")
+x = [int(i) for i in input().split(" ")]
 
 count = 0
 for i in range(len(x)):
