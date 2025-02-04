@@ -3,9 +3,9 @@ x = [int(i) for i in input().split(" ")]
 count = 0
 for i in range(len(x)):
     if len(x) -1 != i:
-        count = count + (int(x[i]) - 1)
+        count = count + (x[i] - 1)
     else:
-        count = count + int(x[i])
+        count = count + x[i]
 
 print(count)
 
