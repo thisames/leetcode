@@ -18,6 +18,10 @@ while True:
     if X1 - X2 == 0 and Y1 - Y2 == 0:
         print(0)
         continue
+        
+    if X1 == X2 or X1 == Y2 or Y1 == X2 or Y1 == Y2:
+        print(1)
+        continue
 
     result = X1 - X2
 
