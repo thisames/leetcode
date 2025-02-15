@@ -34,6 +34,7 @@ while True:
 
         maior = 0
         index = None
+        list_values_results = []
         for key, value in my_map.items():
             if value > maior:
                 maior = value
