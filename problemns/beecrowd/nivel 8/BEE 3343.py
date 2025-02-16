@@ -21,10 +21,19 @@ while i != len(string):
     titan_tamanho = map[titan]
 
     entrou_no_for = False
-    for j in range(len(torres_resto)):
+
+    j = 0
+    while j != len(torres_resto):
         if torres_resto[j] >= titan_tamanho:
-            torres_resto[j] = torres_resto[j] - titan_tamanho
+            x = torres_resto[j] - titan_tamanho
+            if x == 0:
+                torres_resto.pop(j)
+            else:
+                torres_resto[j] = torres_resto[j] - titan_tamanho
             entrou_no_for = True
+            break
+        else:
+            j += 1
 
     if entrou_no_for:
         if i == size:
