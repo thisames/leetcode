@@ -13,7 +13,7 @@ while ponteiro_hora != 120:
         hora += 1
         ponteiro_hora += 1
         count = 0
-    x = (ponteiro_minuto - ponteiro_hora)
+    x = ponteiro_minuto - ponteiro_hora
     calc = x * 360
     angulo_atual = calc / 60
     if angulo_atual == angulo:
