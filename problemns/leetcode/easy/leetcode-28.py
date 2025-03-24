@@ -1,7 +1,21 @@
+# Runtime 0ms
+# good code
+def srtStrRefactor(haystack, needle):
+    index = -1
+    for i in range(len(haystack)):
+        if haystack[i] == needle[0]:
+            if len(haystack[i:len(haystack)]) >= len(needle):
+                if haystack[i:i + len(needle)] == needle:
+                    index = i
+                    break
+    return index
+
+
+print(srtStrRefactor("asdasadbutsad", "sad"))
+
+
 # Runtime 4ms
 # bad code
-
-
 def strStr(haystack, needle):
     if len(needle) > len(haystack):
         return -1
@@ -37,6 +51,3 @@ def strStr(haystack, needle):
                         break
 
     return index
-
-
-print(strStr("aabaaadaaac", "aabaaac"))
