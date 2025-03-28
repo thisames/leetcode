@@ -11,6 +11,10 @@ class ListNode(object):
 def add_item(head, value):
     new_node = ListNode(value)
 
+    if head is None:
+        head = new_node
+        return head
+
     current_storage = head
     while current_storage.next:
         current_storage = current_storage.next
@@ -38,8 +42,7 @@ def deleteDuplicates(head: Optional[ListNode]):
         return head
 
     first = True
-
-    list = []
+    linkedlist = None
     while head.next is not None:
         prev = head
         current = head.next
@@ -50,42 +53,32 @@ def deleteDuplicates(head: Optional[ListNode]):
 
         if first:
             if current.val != prev.val:
-                list.append(prev.val)
+                linkedlist = add_item(linkedlist, prev.val)
             first = False
 
         if current.val != prev.val and current.val != prox:
-            list.append(current.val)
+            linkedlist = add_item(linkedlist, current.val)
 
         head = head.next
-    if len(list) > 0:
-        linkedlist = ListNode(list[0])
-        for i in range(1, len(list)):
-            add_item(linkedlist, list[i])
-        return linkedlist
-    return None
+
+    return linkedlist
 
 
 node1 = ListNode(1)
+node3 = ListNode(3)
+node4 = ListNode(3)
+node5 = ListNode(4)
+node6 = ListNode(4)
+node7 = ListNode(5)
+node8 = ListNode(7)
+node9 = ListNode(9)
 
-# node3 = ListNode(3)
-# node4 = ListNode(3)
-# node5 = ListNode(4)
-# node6 = ListNode(4)
-# node7 = ListNode(5)
-# node8 = ListNode(7)
-# node9 = ListNode(9)
-
-# Ligando os nós
-
-
-# node3.next = node4
-# node4.next = node5
-# node5.next = node6
-# node6.next = node7
-
-
-# node7.next = node8
-# node8.next = node9
-
+node1.next = node3
+node3.next = node4
+node4.next = node5
+node5.next = node6
+node6.next = node7
+node7.next = node8
+node8.next = node9
 
 print(deleteDuplicates(node1))
