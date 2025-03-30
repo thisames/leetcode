@@ -1,3 +1,25 @@
+# refactor solution
+def topKFrequent(nums, k):
+    count = dict()
+
+    for i in nums:
+        count[i] = count.get(i, 0) + 1
+
+    list = []
+    for i in range(k):
+        key = None
+        maior = 0
+        for i in count.keys():
+            if count.get(i) > maior:
+                maior = count.get(i)
+                key = i
+        list.append(key)
+
+        del count[key]
+
+    return list
+
+
 def topKFrequent(nums, k):
     """
     :type nums: List[int]
