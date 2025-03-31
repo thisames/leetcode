@@ -27,6 +27,24 @@ def mostFrequentEven(nums):
     return min(list)
 
 
+def mostFrequentEvenRefactor(nums) -> int:
+    freq_list = Counter(nums)
+
+    value_freq = -1
+    value = -1
+
+    for i in freq_list:
+        if i % 2 == 0:
+            if freq_list[i] > value_freq:
+                value_freq = freq_list[i]
+                value = i
+            if freq_list[i] == value_freq:
+                if i < value:
+                    value = i
+
+    return value
+
+
 nums = [7439, 9849, 3923, 3070, 8541, 7674, 5002, 9657, 2881, 5468, 4777, 3724, 3532, 1384, 4242, 5759, 3030, 1233,
         9428, 8629, 9, 8152, 3033, 94, 8589, 5999, 7863, 8782, 3467, 4988, 3573, 9301, 5880, 8752, 3571, 6290, 9031,
         8645, 1245, 1658, 9441, 3558, 2127, 6364, 1793, 1261, 3914, 3036, 6550, 1919, 9546, 88, 3061, 4811, 6200, 9667,
